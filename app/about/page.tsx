@@ -12,7 +12,7 @@ export default function AboutPage() {
             <div>
               <h1 className="text-4xl font-bold tracking-tight mb-6">About Serene Haven</h1>
               <p className="text-lg text-muted-foreground mb-8">
-                {`Founded in 2005, Serene Haven has been the epitome of luxury hospitality for over two decades. Our commitment to excellence and personalized service has earned us a reputation as one of the world's premier luxury destinations.`}
+                Founded in 2005, Serene Haven has been the epitome of luxury hospitality for over two decades. Our commitment to excellence and personalized service has earned us a reputation as one of the world's premier luxury destinations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild>
@@ -136,7 +136,7 @@ export default function AboutPage() {
               <div className="absolute -bottom-8 -left-8 bg-card p-6 rounded-lg shadow-lg max-w-xs">
                 <p className="text-lg font-semibold mb-2">Our Promise</p>
                 <p className="text-muted-foreground">
-                  {`"Every stay at Serene Haven is designed to exceed expectations and create lasting memories."`}
+                  "Every stay at Serene Haven is designed to exceed expectations and create lasting memories."
                 </p>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl font-bold mb-6">Leadership Team</h2>
             <p className="text-lg text-muted-foreground">
-              {`Meet the dedicated team behind Serene Haven's commitment to excellence and exceptional hospitality.`}
+              Meet the dedicated team behind Serene Haven's commitment to excellence and exceptional hospitality.
             </p>
           </div>
 
@@ -168,7 +168,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-semibold mb-1">Elizabeth Morgan</h3>
                 <p className="text-primary mb-3">CEO & Founder</p>
                 <p className="text-muted-foreground">
-                  {`With over 25 years in luxury hospitality, Elizabeth's vision and leadership have been the driving force behind Serene Haven's success.`}
+                  With over 25 years in luxury hospitality, Elizabeth's vision and leadership have been the driving force behind Serene Haven's success.
                 </p>
               </div>
             </div>
@@ -204,7 +204,7 @@ export default function AboutPage() {
                 <h3 className="text-xl font-semibold mb-1">Sophia Rodriguez</h3>
                 <p className="text-primary mb-3">Guest Experience Manager</p>
                 <p className="text-muted-foreground">
-                  {`Sophia and her team are dedicated to creating personalized experiences that exceed our guests' expectations.`}
+                  Sophia and her team are dedicated to creating personalized experiences that exceed our guests' expectations.
                 </p>
               </div>
             </div>

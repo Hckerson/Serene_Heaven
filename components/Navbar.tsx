@@ -36,7 +36,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
         scrollPosition > 50
-          ? "bg-background/95 backdrop-blur-md shadow-sm"
+          ? "bg-background/95 backdrop-blur-md shadow-warm border-b border-border/50"
           : "bg-transparent"
       )}
     >
@@ -44,7 +44,10 @@ export default function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <Link
             href="/"
-            className="text-2xl font-semibold tracking-tight transition-colors"
+            className={cn(
+              "text-2xl font-semibold tracking-tight transition-colors",
+              scrollPosition > 50 ? "text-luxury" : "text-white"
+            )}
           >
             Serene Haven
           </Link>
@@ -55,13 +58,16 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium transition-colors hover:text-primary"
+                className={cn(
+                  "text-sm font-medium transition-colors hover:text-luxury",
+                  scrollPosition > 50 ? "text-foreground" : "text-white/90"
+                )}
               >
                 {link.label}
               </Link>
             ))}
             <ThemeToggle />
-            <Button className="rounded-full" asChild>
+            <Button className="rounded-full bg-luxury hover:bg-luxury/90 shadow-luxury transition-luxury" asChild>
               <Link href="/booking">Book Now</Link>
             </Button>
           </nav>
@@ -74,7 +80,10 @@ export default function Navbar() {
               size="icon"
               aria-label="Toggle Menu"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="ml-2"
+              className={cn(
+                "ml-2 transition-colors",
+                scrollPosition > 50 ? "text-foreground hover:text-luxury" : "text-white hover:text-white/80"
+              )}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -84,19 +93,19 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 top-20 bg-background z-40 md:hidden">
+        <div className="fixed inset-0 top-20 bg-background/95 backdrop-blur-md z-40 md:hidden border-t border-border/50">
           <nav className="container mx-auto px-4 py-6 flex flex-col space-y-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-lg font-medium py-2 transition-colors hover:text-primary"
+                className="text-lg font-medium py-2 transition-colors hover:text-luxury border-b border-border/30 last:border-b-0"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <Button className="mt-4 w-full" asChild>
+            <Button className="mt-4 w-full bg-luxury hover:bg-luxury/90 shadow-luxury transition-luxury" asChild>
               <Link href="/booking" onClick={() => setIsMenuOpen(false)}>
                 Book Now
               </Link>

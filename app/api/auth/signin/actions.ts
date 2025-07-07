@@ -14,7 +14,7 @@ export async function signIn(data: {
   //receive signin data and create session for users
   const { email, password, rememberMe } = data;
   try {
-    const user = await prisma.user.findUnique({ where: { email: email } });
+    const user = await prisma.guest.findUnique({ where: { email: email } });
     if (user == null) {
       return { message: "failed", status: 400, provider: null };
     }

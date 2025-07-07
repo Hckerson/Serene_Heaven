@@ -8,12 +8,10 @@ const userData: Prisma.UserCreateInput[] = [
     email: "Hckerson@gmail.com",
     role: "ADMIN",
     avatar: {
-      create: [
-        {
-          image:
-            "https://images.unsplash.com/photo-1700927450791-2b1c71f7a75b?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        },
-      ],
+      create: {
+        image:
+          "https://images.unsplash.com/photo-1700927450791-2b1c71f7a75b?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      },
     },
   },
   {
@@ -21,12 +19,10 @@ const userData: Prisma.UserCreateInput[] = [
     email: "david.mitchell@example.com",
     role: "ADMIN",
     avatar: {
-      create: [
-        {
-          image:
-            "https://res.cloudinary.com/mailranch/image/upload/David%20Mitchell?_a=BAMABkUq0",
-        },
-      ],
+      create: {
+        image:
+          "https://res.cloudinary.com/mailranch/image/upload/David%20Mitchell?_a=BAMABkUq0",
+      },
     },
     team: {
       create: {
@@ -41,12 +37,10 @@ const userData: Prisma.UserCreateInput[] = [
     email: "jennifer.williams@example.com",
     role: "ADMIN",
     avatar: {
-      create: [
-        {
-          image:
-            "https://res.cloudinary.com/mailranch/image/upload/Jennifer%20Williams?_a=BAMABkUq0",
-        },
-      ],
+      create: {
+        image:
+          "https://res.cloudinary.com/mailranch/image/upload/Jennifer%20Williams?_a=BAMABkUq0",
+      },
     },
     team: {
       create: {
@@ -61,12 +55,10 @@ const userData: Prisma.UserCreateInput[] = [
     email: "michael.rodriguez@example.com",
     role: "ADMIN",
     avatar: {
-      create: [
-        {
-          image:
-            "https://res.cloudinary.com/mailranch/image/upload/Michael%20Rodriguez?_a=BAMABkUq0",
-        },
-      ],
+      create: {
+        image:
+          "https://res.cloudinary.com/mailranch/image/upload/Michael%20Rodriguez?_a=BAMABkUq0",
+      },
     },
     team: {
       create: {
@@ -81,12 +73,10 @@ const userData: Prisma.UserCreateInput[] = [
     email: "amanda.chen@example.com",
     role: "ADMIN",
     avatar: {
-      create: [
-        {
-          image:
-            "https://res.cloudinary.com/mailranch/image/upload/Amanda%20Chen?_a=BAMABkUq0",
-        },
-      ],
+      create: {
+        image:
+          "https://res.cloudinary.com/mailranch/image/upload/Amanda%20Chen?_a=BAMABkUq0",
+      },
     },
     team: {
       create: {
@@ -101,12 +91,10 @@ const userData: Prisma.UserCreateInput[] = [
     email: "robert.johnson@example.com",
     role: "ADMIN",
     avatar: {
-      create: [
-        {
-          image:
-            "https://res.cloudinary.com/mailranch/image/upload/Robert%20Johnson?_a=BAMABkUq0",
-        },
-      ],
+      create: {
+        image:
+          "https://res.cloudinary.com/mailranch/image/upload/Robert%20Johnson?_a=BAMABkUq0",
+      },
     },
     team: {
       create: {
@@ -121,12 +109,10 @@ const userData: Prisma.UserCreateInput[] = [
     email: "sophia.patel@example.com",
     role: "ADMIN",
     avatar: {
-      create: [
-        {
-          image:
-            "https://res.cloudinary.com/mailranch/image/upload/Sophia%20Patel?_a=BAMABkUq0",
-        },
-      ],
+      create: {
+        image:
+          "https://res.cloudinary.com/mailranch/image/upload/Sophia%20Patel?_a=BAMABkUq0",
+      },
     },
     team: {
       create: {

@@ -16,8 +16,26 @@ datasource db {
 }
 
 enum Role {
-  USER
+  GUEST
   ADMIN
+  MANAGER
+  STAFF
+}
+
+enum Permission {
+  CREATE
+  READ
+  UPDATE
+  DELETE
+}
+
+enum RoomType {
+  DELUXE
+  OCEAN_VIEW
+  EXECUTIVE
+  PRESIDENTIAL
+  JUNIOR
+  FAMILY
 }
 
 enum Status {
@@ -26,49 +44,49 @@ enum Status {
   REJECTED
 }
 
-model User {
-  id          String      @id @default(uuid())
-  email       String      @unique
+model Guest {
+  id          String    @id @default(uuid())
+  email       String    @unique
   password    String?
   provider    String?
-  username    String?     
-  status      String      @default("unverified")
-  localStatus Boolean     @default(true)
+  username    String?
+  status      String    @default("unverified")
+  localStatus Boolean   @default(true)
   phone       String?
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
   avatar      Avatar[]
-  role        Role        @default(USER)
-  team        TeamMember?
+  role        Role      @default(GUEST)
   sessions    Session[]
+}
+
+model Bookings {
+  id           String   @id @default(uuid())
+  guestId      String
+  checkInDate  DateTime @default(now())
+  checkoutDate DateTime
+  roomType     RoomType  
+  adult        String
+  childeren    String
 }
 
 model Avatar {
   id        String   @id @default(uuid())
   userId    String   @unique
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  user      Guest    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   image     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
-model TeamMember {
-  id       String  @id @default(uuid())
-  position String
-  bio      String?
-  linkedIn String?
-  user     User    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  userId   String  @unique
-}
-
 model Session {
   id         String   @id @default(uuid())
-  userId     String   
+  userId     String
   expires    DateTime
   otpEnabled Boolean  @default(false)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  user       Guest    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
 
   @@index([id, userId])
 }

@@ -55,7 +55,7 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl font-bold tracking-tight mb-6">Contact Us</h1>
             <p className="text-lg text-muted-foreground">
-              {`We're here to help with any questions you may have about Serene Haven. Reach out to our team using the form below or through our contact details.`}
+              We're here to help with any questions you may have about Serene Haven. Reach out to our team using the form below or through our contact details.
             </p>
           </div>
         </div>
@@ -141,7 +141,7 @@ export default function ContactPage() {
                       </div>
                       <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
                       <p className="text-muted-foreground mb-4">
-                        {`Your message has been sent successfully. We'll get back to you shortly.`}
+                        Your message has been sent successfully. We'll get back to you shortly.
                       </p>
                       <Button onClick={() => setIsSubmitted(false)}>Send Another Message</Button>
                     </div>

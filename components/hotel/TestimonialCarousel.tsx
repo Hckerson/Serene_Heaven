@@ -65,7 +65,7 @@ export default function TestimonialCarousel() {
       onMouseEnter={() => setAutoplay(false)}
       onMouseLeave={() => setAutoplay(true)}
     >
-      <Card className="shadow-lg bg-card">
+      <Card className="shadow-warm bg-card border-border/50 overflow-hidden">
         <CardContent className="p-0">
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-2/5 relative aspect-square md:aspect-auto">
@@ -76,18 +76,19 @@ export default function TestimonialCarousel() {
                 sizes="(max-width: 768px) 100vw, 40vw"
                 className="object-cover h-full"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-luxury/20 to-transparent" />
             </div>
-            <div className="w-full md:w-3/5 p-8 flex flex-col justify-center">
+            <div className="w-full md:w-3/5 p-8 flex flex-col justify-center bg-gradient-to-br from-background to-muted/30">
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary stroke-primary mr-1" />
+                  <Star key={i} className="w-5 h-5 fill-gold text-gold mr-1" />
                 ))}
               </div>
-              <blockquote className="text-lg italic mb-6">
-                `${testimonial.quote}`
+              <blockquote className="text-lg italic mb-6 text-foreground leading-relaxed">
+                "{testimonial.quote}"
               </blockquote>
               <div>
-                <p className="font-semibold">{testimonial.name}</p>
+                <p className="font-semibold text-luxury">{testimonial.name}</p>
                 <p className="text-sm text-muted-foreground">{testimonial.location}</p>
               </div>
             </div>
@@ -99,8 +100,8 @@ export default function TestimonialCarousel() {
         {testimonials.map((_, index) => (
           <button
             key={index}
-            className={`w-2.5 h-2.5 rounded-full transition-all ${
-              index === currentIndex ? "bg-primary w-6" : "bg-primary/30"
+            className={`h-2.5 rounded-full transition-all ${
+              index === currentIndex ? "bg-luxury w-6" : "bg-luxury/30 w-2.5"
             }`}
             onClick={() => {
               setAutoplay(false);
@@ -114,20 +115,20 @@ export default function TestimonialCarousel() {
       <Button
         variant="secondary"
         size="icon"
-        className="absolute top-1/2 left-4 -translate-y-1/2 rounded-full opacity-70 hover:opacity-100"
+        className="absolute top-1/2 left-4 -translate-y-1/2 rounded-full bg-white/90 hover:bg-white shadow-warm transition-luxury"
         onClick={handlePrev}
         aria-label="Previous testimonial"
       >
-        <ChevronLeft className="h-6 w-6" />
+        <ChevronLeft className="h-6 w-6 text-luxury" />
       </Button>
       <Button
         variant="secondary"
         size="icon"
-        className="absolute top-1/2 right-4 -translate-y-1/2 rounded-full opacity-70 hover:opacity-100"
+        className="absolute top-1/2 right-4 -translate-y-1/2 rounded-full bg-white/90 hover:bg-white shadow-warm transition-luxury"
         onClick={handleNext}
         aria-label="Next testimonial"
       >
-        <ChevronRight className="h-6 w-6" />
+        <ChevronRight className="h-6 w-6 text-luxury" />
       </Button>
     </div>
   );

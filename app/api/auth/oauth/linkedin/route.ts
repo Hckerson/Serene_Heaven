@@ -25,11 +25,11 @@ export async function GET(request: Request) {
   const { email, image, firstName, lastName, verified } = user;
   const hours = 48;
   const expiresAt = new Date(Date.now() + hours * 3600 * 1000);
-  const user_email = await prisma.user.findUnique({
+  const user_email = await prisma.guest.findUnique({
     where: { email: email as string },
   });
   if (user_email == null) {
-    const user = await prisma.user.create({
+    const user = await prisma.guest.create({
       data: {
         email: email as string,
         status: "verified",
@@ -63,7 +63,7 @@ export async function GET(request: Request) {
       });
     }
   } else {
-    const user = await prisma.user.findUnique({
+    const user = await prisma.guest.findUnique({
       where: { email: email as string, localStatus: false },
     });
     if (user) {

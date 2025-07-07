@@ -39,9 +39,7 @@ const formSchema = z.object({
   rememberMe: z.boolean().default(false),
 });
 
-
-
-export default function LoginPage({error}: {error: string}) {
+export default function LoginPage({ error }: { error: string }) {
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
@@ -75,21 +73,24 @@ export default function LoginPage({error}: {error: string}) {
       setIsLoading(true);
       // Simulate backend call
       const result = await signIn(values);
-      if (!result){
+      if (!result) {
         return;
       }
 
       if ("message" in result && result.message == "not_local") {
-        toast.error("This is not a local account. Please login with " + result.provider, {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        toast.error(
+          "This is not a local account. Please login with " + result.provider,
+          {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          }
+        );
         return;
       }
 
@@ -116,7 +117,7 @@ export default function LoginPage({error}: {error: string}) {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-background py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen flex items-center justify-center bg-background my-10 px-4 sm:px-6 lg:px-8">
       <ToastContainer />
       <Card className="w-full max-w-md">
         <CardHeader className="space-y-1">
@@ -238,17 +239,27 @@ export default function LoginPage({error}: {error: string}) {
           </div>
 
           <div className="grid gap-2">
-            <Button variant="outline" type="button" disabled={isLoading} onClick={() => loginGithub()}>
+            <Button
+              variant="outline"
+              type="button"
+              disabled={isLoading}
+              onClick={() => loginGithub()}
+            >
               <Github className="mr-2 h-4 w-4" />
               Github
             </Button>
           </div>
           <div className="grid gap-2 mt-3">
-            <Button variant="outline" type="button" disabled={isLoading} onClick={() => login()}>
+            <Button
+              variant="outline"
+              type="button"
+              disabled={isLoading}
+              onClick={() => login()}
+            >
               <FaGoogle className="mr-2 h-4 w-4" />
               Google
             </Button>
-          </div>    
+          </div>
         </CardContent>
         <CardFooter>
           <p className="text-sm text-muted-foreground text-center w-full">
