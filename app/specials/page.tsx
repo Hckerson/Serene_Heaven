@@ -147,7 +147,6 @@ export default function SpecialsPage() {
                   <div className="absolute top-4 right-4 bg-gold text-primary-foreground px-3 py-1 rounded-full text-sm font-bold">
                     {offer.discount}% OFF
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 </div>
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-4">
